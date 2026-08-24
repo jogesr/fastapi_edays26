@@ -1,0 +1,27 @@
+[project]
+name = "fastapi-live-coding"
+version = "0.1.0"
+description = "Live-Coding-Demo: FastAPI in Action"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi[standard]",
+    "openai",
+    "python-dotenv",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "ruff",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# The app modules live in the project root, not in a package.
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
